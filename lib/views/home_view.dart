@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:weather_app/widgets/no_weather_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,6 +7,24 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: NoWeatherBody());
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Iconsax.menu_1_copy, color: Color(0xff94D2BD)),
+          onPressed: () {},
+        ),
+
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: IconButton(
+              icon: Icon(Iconsax.search_normal_copy, color: Color(0xff94D2BD)),
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ),
+      body: NoWeatherBody(),
+    );
   }
 }

@@ -23,7 +23,7 @@ class NoWeatherBody extends StatelessWidget {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(width: 8),
-              Icon(Iconsax.search_status,size: 28,),
+              Icon(Iconsax.search_status, size: 28),
             ],
           ),
         ],
