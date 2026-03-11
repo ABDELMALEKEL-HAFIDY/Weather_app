@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:weather_app/widgets/no_weather_body.dart';
 
@@ -19,7 +20,9 @@ class HomeView extends StatelessWidget {
             padding: const EdgeInsets.only(right: 15),
             child: IconButton(
               icon: Icon(Iconsax.search_normal_copy, color: Color(0xff94D2BD)),
-              onPressed: () {},
+              onPressed: () {
+                context.go('/search');
+              },
             ),
           ),
         ],
