@@ -13,6 +13,7 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router,
+      //theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       
     );

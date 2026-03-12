@@ -19,28 +19,33 @@ class SearchView extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
+            onChanged: (value){},
             decoration: InputDecoration(
               hintText: "Search For Cities",
+              prefixIcon: Icon(Iconsax.search_normal_copy),
+              filled: true,
+              fillColor: const Color.fromARGB(221, 226, 220, 220),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: Color(0xff94D2BD))),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide(
-                    color: Color(0xff94D2BD),
-                    style: BorderStyle.solid
-                    ),),
-                    
-            ),
+                borderSide: BorderSide(
+                  width: 5,
+                  //color: Color(0xff94D2BD),
+                ),
               ),
-              
+
+              //enabledBorder: OutlineInputBorder(
+              // borderRadius: BorderRadius.circular(16),
+              // borderSide: BorderSide(
+              //  color: Color(0xff94D2BD),
+              //  style: BorderStyle.solid
+              //  ),),
+            ),
           ),
         ),
-      
-      
+      ),
     );
   }
 }

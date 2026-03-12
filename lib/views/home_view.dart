@@ -9,6 +9,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Iconsax.menu_1_copy, color: Color(0xff94D2BD)),
