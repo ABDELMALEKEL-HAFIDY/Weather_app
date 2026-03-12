@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/utils/go_router.dart';
+import 'package:weather_app/core/utils/go_router.dart';
 
 
 void main() {

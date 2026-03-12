@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:weather_app/views/home_view.dart';
-import 'package:weather_app/views/search_view.dart';
-import 'package:weather_app/widgets/weather_info_body.dart';
+import 'package:weather_app/features/presentation/views/home_view.dart';
+import 'package:weather_app/features/presentation/views/search_view.dart';
+
 
 final GoRouter router = GoRouter(
   routes: [
