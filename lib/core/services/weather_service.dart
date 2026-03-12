@@ -5,9 +5,11 @@ class WeatherService {
   final Dio dio;
 
   WeatherService(this.dio);
-  WeatherModel getCurrentWeather() {
-    dio.get(
-      'https://api.weatherapi.com/v1/forecast.json?key=bb2280fbda7d45b0ad904204261203&q=London&days=1',
+  Future<WeatherModel> getCurrentWeather({required String cityName}) async {
+    Response response = await dio.get(
+      'https://api.weatherapi.com/v1/forecast.json?key=bb2280fbda7d45b0ad904204261203&q=$cityName&days=1',
     );
+    WeatherModel weatherModel = WeatherModel.fromJson(response.data);
+    return weatherModel;
   }
 }
