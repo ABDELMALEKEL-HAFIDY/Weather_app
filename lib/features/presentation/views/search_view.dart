@@ -1,6 +1,11 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:weather_app/core/models/weather_model.dart';
+import 'package:weather_app/core/services/weather_service.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -22,7 +27,12 @@ class SearchView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
-            onChanged: (value){},
+            onSubmitted: (value) async {
+              WeatherModel weatherModel = await WeatherService(
+                Dio(),
+              ).getCurrentWeather(cityName: value);
+              log(weatherModel.cityName);
+            },
             decoration: InputDecoration(
               hintText: "Search For Cities",
               prefixIcon: Icon(Iconsax.search_normal_copy),
