@@ -61,4 +61,5 @@ class SearchView extends StatelessWidget {
   }
 }
 
-WeatherModel? weatherModel;
+WeatherModel? weatherModel; // Global share data wiht all widgets not good for know
+
