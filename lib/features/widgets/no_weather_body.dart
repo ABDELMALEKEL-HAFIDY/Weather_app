@@ -11,19 +11,19 @@ class NoWeatherBody extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'Weather Around You ☀️',
             style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Searching Now',
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              SizedBox(width: 8),
-              Icon(Iconsax.search_status, size: 28),
+              const SizedBox(width: 8),
+              const Icon(Iconsax.search_status, size: 28),
             ],
           ),
         ],
