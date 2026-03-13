@@ -35,9 +35,9 @@ class SearchView extends StatelessWidget {
             },
             decoration: InputDecoration(
               hintText: "Search For Cities",
-              prefixIcon: Icon(Iconsax.search_normal_copy),
+              suffixIcon: Icon(Iconsax.search_normal_copy),
               filled: true,
-              fillColor: const Color.fromARGB(221, 226, 220, 220),
+              fillColor: const Color.fromARGB(255, 235, 240, 238),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
                 borderSide: BorderSide(
