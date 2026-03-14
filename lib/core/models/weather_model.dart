@@ -2,7 +2,7 @@ class WeatherModel {
   final String cityName;
   final String weatherCondition;
   final String? icon;
-  //final double temp;
+                                                 //final double temp;
   final double maxTemp;
   final double minTemp;
   final double avgTemp;

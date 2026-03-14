@@ -6,10 +6,10 @@ import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_w
 
 class GetWeatherCubit extends Cubit<WeatherState> {
   GetWeatherCubit() : super(WeatherInitialState());
-
+  late WeatherModel weatherModel; // i create weatherModel for widgets forked
   getWeather({required String cityName}) async {
     try {
-      WeatherModel weatherModel = await WeatherService(
+       weatherModel = await WeatherService(
         Dio(),
       ).getCurrentWeather(cityName: cityName);
       emit(WeatherLoadedSate(weatherModel));

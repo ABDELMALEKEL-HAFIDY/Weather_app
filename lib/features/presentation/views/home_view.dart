@@ -44,7 +44,7 @@ class _HomeViewState extends State<HomeView> {
             return NoWeatherBody();
           } else if (state is WeatherLoadedSate) {
             return WeatherInfoBody(
-              weatherModel: state.weatherModel,
+             // weatherModel: state.weatherModel,//old with not forked
             );
           } else {
             return Text('Opps there was an error');
