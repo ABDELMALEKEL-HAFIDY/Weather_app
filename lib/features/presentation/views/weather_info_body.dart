@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/models/weather_model.dart';
 import 'package:weather_app/core/utils/assets.dart';
+import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/features/widgets/custom_text.dart';
 import 'package:weather_app/features/widgets/weather_widgets_%20stat.dart';
 
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({super.key, required this.weatherModel});
-  final WeatherModel weatherModel;
+  const WeatherInfoBody({super.key});
+  //final WeatherModel weatherModel;// old with not forked
   @override
   Widget build(BuildContext context) {
+    var weatherModel = BlocProvider.of<GetWeatherCubit>(
+      context,
+    ).weatherModel; // that weatherModel for forked with all widget
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
           const SizedBox(height: 30),
-          Text(
-            weatherModel.cityName,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
+          CustomText(),
           const SizedBox(height: 8),
           Text(
-            'cloudy',
+            weatherModel.weatherCondition,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
           Image.asset(Assets.imagesFrame),
           const SizedBox(height: 20),
           Row(
-            children: const [
+            children:  [
               Text(
-                "51°",
+                weatherModel.avgTemp.toString(),
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -37,23 +40,23 @@ class WeatherInfoBody extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "47°",
+                "${weatherModel.maxTemp}°",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color(0xff0f1c44),
                 ),
               ),
               SizedBox(width: 6),
-              Text("63°", style: TextStyle(color: Colors.grey)),
+              Text("${weatherModel.minTemp}°", style: TextStyle(color: Colors.grey)),
             ],
           ),
           const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              WeatherStat(icon: Icons.air, text: '106m/h'),
-              WeatherStat(icon: Icons.water_drop_outlined, text: '22%'),
-              WeatherStat(icon: Icons.umbrella_outlined, text: "11%"),
+              WeatherStat(icon: Icons.air, text: "${weatherModel.maxWindKph.toString()} Km/h"),
+              WeatherStat(icon: Icons.water_drop_outlined, text: "${weatherModel.humidity.toString()} %"),
+              WeatherStat(icon: Icons.umbrella_outlined, text: "${weatherModel.chanceOfRain.toString()} °"),
             ],
           ),
           SizedBox(height: 40),
@@ -62,3 +65,5 @@ class WeatherInfoBody extends StatelessWidget {
     );
   }
 }
+
+
