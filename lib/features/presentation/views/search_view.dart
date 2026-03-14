@@ -1,11 +1,10 @@
-import 'dart:developer';
 
-import 'package:dio/dio.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import 'package:weather_app/core/models/weather_model.dart';
-import 'package:weather_app/core/services/weather_service.dart';
+
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -27,10 +26,8 @@ class SearchView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
-            onSubmitted: (value) async {
-              weatherModel = await WeatherService(
-                Dio(),
-              ).getCurrentWeather(cityName: value);
+            onSubmitted: (value)  {
+              
               //log(weatherModel.cityName);
               context.go('/');
             },
@@ -61,5 +58,5 @@ class SearchView extends StatelessWidget {
   }
 }
 
-WeatherModel? weatherModel; // Global share data wiht all widgets not good for know
+//WeatherModel? weatherModel; // Global share data wiht all widgets not good for know
 

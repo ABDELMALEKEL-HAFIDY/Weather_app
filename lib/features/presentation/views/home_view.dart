@@ -30,7 +30,9 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      body: weatherModel ==null ? const NoWeatherBody(): WeatherInfoBody(),// i use Ternary operator
+      body: NoWeatherBody(),
+      
+      //weatherModel ==null ? const NoWeatherBody(): WeatherInfoBody(),// i use Ternary operator
     );
   }
 }
