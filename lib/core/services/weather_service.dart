@@ -22,7 +22,7 @@ class WeatherService {
           'Oops There Was Error, Try Later';
       throw Exception(errorMessage);
     } catch (e) {
-      log(e.toString());
+      //log(e.toString());
       throw Exception('Oops There Was Error, Try Later');
     }
   }

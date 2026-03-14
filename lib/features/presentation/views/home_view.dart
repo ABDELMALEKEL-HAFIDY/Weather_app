@@ -34,3 +34,9 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+// create status
+// create cubit
+//create function
+//provide cubit
+//integrate cubit
+//trigger cubit
