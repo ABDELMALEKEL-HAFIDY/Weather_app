@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/models/weather_model.dart';
 import 'package:weather_app/core/utils/assets.dart';
 import 'package:weather_app/features/widgets/weather_widgets_%20stat.dart';
 
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({super.key});
-
+  const WeatherInfoBody({super.key, required this.weatherModel});
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +14,7 @@ class WeatherInfoBody extends StatelessWidget {
         children: [
           const SizedBox(height: 30),
           Text(
-            'London',
+            weatherModel.cityName,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
