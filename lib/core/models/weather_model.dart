@@ -25,7 +25,7 @@ class WeatherModel {
     return WeatherModel(
       cityName: json['location']['name'],
       weatherCondition: json['forecast']['forecastday'][0]['day']['condition']['text'],
-      weatherCode: json ['forecast']['forecastday'][0]['condition']['code'],
+      weatherCode: json ['forecast']['forecastday'][0]['day']['condition']['code'],
       // temp: json['forecast']['forecastday'][0]['day'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
       minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],

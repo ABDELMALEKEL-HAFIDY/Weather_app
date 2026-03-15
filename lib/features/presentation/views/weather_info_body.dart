@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/models/weather_model.dart';
+import 'package:weather_app/core/services/get_weather_code.dart';
 import 'package:weather_app/core/utils/assets.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/features/widgets/custom_text.dart';
@@ -14,6 +15,7 @@ class WeatherInfoBody extends StatelessWidget {
     var weatherModel = BlocProvider.of<GetWeatherCubit>(
       context,
     ).weatherModel; // that weatherModel for forked with all widget
+    int code = weatherModel.weatherCode;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -26,7 +28,7 @@ class WeatherInfoBody extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-          Image.asset(Assets.imagesSunny),
+          Image.asset(getWeatherImage(weatherModel.weatherCode)),
           const SizedBox(height: 20),
           Row(
             children:  [
