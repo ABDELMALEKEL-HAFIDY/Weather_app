@@ -1,7 +1,7 @@
 class WeatherModel {
   final String cityName;
   final String weatherCondition;
-  final String? icon;
+  final int weatherCode;
                                                  //final double temp;
   final double maxTemp;
   final double minTemp;
@@ -9,11 +9,10 @@ class WeatherModel {
   final double maxWindKph;
   final int humidity;
   final int chanceOfRain;
-
   WeatherModel({
     required this.cityName,
     required this.weatherCondition,
-    this.icon,
+    required this.weatherCode,
     //required this.temp,
     required this.maxTemp,
     required this.minTemp,
@@ -26,6 +25,7 @@ class WeatherModel {
     return WeatherModel(
       cityName: json['location']['name'],
       weatherCondition: json['forecast']['forecastday'][0]['day']['condition']['text'],
+      weatherCode: json ['forecast']['forecastday'][0]['condition']['code'],
       // temp: json['forecast']['forecastday'][0]['day'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
       minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],

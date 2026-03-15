@@ -26,7 +26,7 @@ class WeatherInfoBody extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-          Image.asset(Assets.imagesFrame),
+          Image.asset(Assets.imagesSunny),
           const SizedBox(height: 20),
           Row(
             children:  [
@@ -40,14 +40,14 @@ class WeatherInfoBody extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "${weatherModel.maxTemp}°",
+                "${weatherModel.maxTemp.round()}°",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color(0xff0f1c44),
                 ),
               ),
               SizedBox(width: 6),
-              Text("${weatherModel.minTemp}°", style: TextStyle(color: Colors.grey)),
+              Text("${weatherModel.minTemp.round()}°", style: TextStyle(color: Colors.grey)),
             ],
           ),
           const Spacer(),
