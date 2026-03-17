@@ -15,19 +15,7 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetWeatherCubit(),
-      child: CustomMaterialApp(),
-    );
-  }
-}
-
-class CustomMaterialApp extends StatelessWidget {
-  const CustomMaterialApp({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
+      child: MaterialApp.router(
       routerConfig: router,
       theme: ThemeData(
         primarySwatch: getThemeColor(
@@ -37,6 +25,9 @@ class CustomMaterialApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
+    ),
     );
   }
 }
+
+
