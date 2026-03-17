@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 
 
-MaterialColor getThemeColor(String condition) {
-  switch (condition.toLowerCase()) {
+MaterialColor getThemeColor(String? condition) {
+  if(condition == null){
+    return Colors.blueGrey;
+  }
+  switch (condition) {
 
     case 'sunny':
     case 'clear':

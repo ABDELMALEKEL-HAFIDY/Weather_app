@@ -19,9 +19,9 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff2f2f2),
+      //backgroundColor: const Color(0xfff2f2f2),
       appBar: AppBar(
-        backgroundColor: const Color(0xfff2f2f2),
+        //backgroundColor: const Color(0xfff2f2f2),
         leading: IconButton(
           icon: Icon(Iconsax.menu_1_copy, color: Color(0xff94D2BD)),
           onPressed: () {},

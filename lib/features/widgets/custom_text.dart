@@ -9,7 +9,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
    // BlocProvider.of<GetWeatherCubit>(context).weatherModel.cityName;
     return Text(
-      BlocProvider.of<GetWeatherCubit>(context).weatherModel.cityName,
+      BlocProvider.of<GetWeatherCubit>(context).weatherModel!.cityName,
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }

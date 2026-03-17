@@ -12,9 +12,9 @@ class WeatherInfoBody extends StatelessWidget {
   //final WeatherModel weatherModel;// old with not forked
   @override
   Widget build(BuildContext context) {
-    var weatherModel = BlocProvider.of<GetWeatherCubit>(
+    WeatherModel weatherModel = BlocProvider.of<GetWeatherCubit>(
       context,
-    ).weatherModel; // that weatherModel for forked with all widget
+    ).weatherModel!; // that weatherModel for forked with all widget
     int code = weatherModel.weatherCode;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
