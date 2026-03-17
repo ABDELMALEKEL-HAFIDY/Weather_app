@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/utils/go_router.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/core/utils/get_themeColor.dart';
 
 
 void main() {
+  
   runApp(const WeatherApp());
 }
 
@@ -17,7 +19,7 @@ class WeatherApp extends StatelessWidget {
       create: (context)=> GetWeatherCubit(),
       child: MaterialApp.router(
         routerConfig: router,
-        //theme: ThemeData.light(),
+        theme: ThemeData(primarySwatch:  getThemeColor()),
         debugShowCheckedModeBanner: false,
         
       ),
