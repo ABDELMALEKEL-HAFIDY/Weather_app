@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:weather_app/core/utils/get_themeColor.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_state.dart';
 import 'package:weather_app/features/presentation/views/search_view.dart';
@@ -21,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       //backgroundColor: const Color(0xfff2f2f2),
       appBar: AppBar(
-        //backgroundColor: const Color(0xfff2f2f2),
+        backgroundColor: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.weatherCondition),
         leading: IconButton(
           icon: Icon(Iconsax.menu_1_copy, color: Color(0xff94D2BD)),
           onPressed: () {},
@@ -44,6 +45,7 @@ class _HomeViewState extends State<HomeView> {
             return NoWeatherBody();
           } else if (state is WeatherLoadedSate) {
             return WeatherInfoBody(
+              weather: state.weatherModel,
              // weatherModel: state.weatherModel,//old with not forked
             );
           } else {
