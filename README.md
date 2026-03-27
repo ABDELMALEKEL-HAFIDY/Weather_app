@@ -36,25 +36,20 @@ This app allows users to search for any city and instantly get accurate weather 
 
 ## 📸 Screenshots
 
-### 🔹 Home Screen
 
-![Home](screenshotd/home.png)
+<p align="center">
+  <img src="screenshots/home.png" width="250"/>
+  <img src="screenshots/search.png" width="250"/>
+</p>
 
-### 🔹 Search Screen
+<p align="center">
+  <img src="screenshots/sunny.png" width="250"/>
+  <img src="screenshots/xcloudy.png" width="250"/>
+</p>
 
-![Search](screenshotd/search.png)
-
-### 🔹 Weather Result (Sunny)
-
-![Sunny](screenshotd/sunny.png)
-
-### 🔹 Weather Result (Cloudy)
-
-![Cloudy](screenshotd/xcloudy.png)
-
-### 🔹 Weather Result (Rainy)
-
-![Cloudy](screenshotd/yrainy.png.png)
+<p align="center">
+  <img src="screenshots/yrainy.png" width="250"/>
+</p>
 
 
 
