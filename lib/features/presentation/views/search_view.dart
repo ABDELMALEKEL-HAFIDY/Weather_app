@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:weather_app/core/utils/get_themeColor.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
 
 class SearchView extends StatelessWidget {
@@ -11,6 +12,7 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+       // backgroundColor: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.weatherCondition),
         centerTitle: true,
         title: const Text('Search City'),
         leading: IconButton(

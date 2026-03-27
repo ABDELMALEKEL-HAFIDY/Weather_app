@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/models/weather_model.dart';
 import 'package:weather_app/core/services/get_weather_code.dart';
-import 'package:weather_app/core/utils/assets.dart';
+
 import 'package:weather_app/core/utils/get_themeColor.dart';
 import 'package:weather_app/features/presentation/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/features/widgets/custom_text.dart';
@@ -20,14 +20,15 @@ class WeatherInfoBody extends StatelessWidget {
     int code = weatherModel.weatherCode;
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors:[
-             getThemeColor(weatherModel.weatherCondition),
-             getThemeColor(weatherModel.weatherCondition)[300]!,
-             getThemeColor(weatherModel.weatherCondition)[50]!,
-             ],begin: Alignment.topCenter,end: Alignment.bottomCenter
-             )
-      ),
+      //  gradient: LinearGradient(
+      //       colors:[
+      //          getThemeColor(weatherModel.weatherCondition),
+      //         getThemeColor(weatherModel.weatherCondition)[300]!,
+      //         getThemeColor(weatherModel.weatherCondition)[50]!,
+      //          ],begin: Alignment.topCenter,end: Alignment.bottomCenter
+      //        )
+        ),
+      
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(

@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       //backgroundColor: const Color(0xfff2f2f2),
       appBar: AppBar(
-        backgroundColor: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.weatherCondition),
+       // backgroundColor: getThemeColor(BlocProvider.of<GetWeatherCubit>(context).weatherModel?.weatherCondition),
         leading: IconButton(
           icon: Icon(Iconsax.menu_1_copy, color: Color(0xff94D2BD)),
           onPressed: () {},
