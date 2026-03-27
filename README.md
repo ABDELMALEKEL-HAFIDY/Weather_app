@@ -36,7 +36,6 @@ This app allows users to search for any city and instantly get accurate weather 
 
 ## 📸 Screenshots
 
-
 <p align="center">
   <img src="screenshots/home.png" width="250"/>
   <img src="screenshots/search.png" width="250"/>
